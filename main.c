@@ -1,32 +1,32 @@
 #include <math.h>
 #include <stdio.h>
 
-int factorial(int n)
+double factorial(double n)
 {
-  int f = 1;
-  for (int i = 1; i <= n; i++)
+  double factorial = 1;
+  for (double i = 1; i <= n; i++)
   {
-    f *= i;
+    factorial *= i;
   }
 
-  return f;
+  return factorial;
 }
 
 double calculate(int digits, int terms)
 {
-  double sum;
+  double summation;
 
   for (int i = 1; i <= terms; i++)
   {
     double numerator = pow((-1), i) * factorial(6 * i) * (545140134 * i + 13591409);
     double denominator = factorial(3 * i) * pow(factorial(i), 3) * pow(640320, 3 * i + 3 / 2);
 
-    sum += numerator / denominator;
+    summation += numerator / denominator;
   }
 
-  sum *= 12 / pow(640320, 1.5);
+  summation *= 12 / pow(640320, 1.5);
 
-  return 1 / sum;
+  return 1 / summation;
 }
 
 int main()
